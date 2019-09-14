@@ -6,7 +6,7 @@ void inciar(blinky * bs){
 	bs->estado = PRENDIDO;
 	bs->ultimoCambio =  tickRead();
 }
-void controladorBlinky(blinky * bs){
+void controladorBlinky_Update(blinky * bs){
 	int tickActual = tickRead();
 	int tiempoPasado = tickActual - bs->ultimoCambio;
 
@@ -26,15 +26,19 @@ void controladorBlinky(blinky * bs){
 	}
 }
 
-void prender(blinky * bs){
+void controladorBlinky_Prender(blinky * bs){
 
 	switch(bs->estado){
 
 	case PRENDIDO:{
 			gpioWrite( LEDB, ON );
+			gpioWrite( LEDR, ON );
+			gpioWrite( LEDG, ON );
 		}break;
 	case APAGADO:{
 			gpioWrite( LEDB, OFF );
+			gpioWrite( LEDR, OFF );
+			gpioWrite( LEDG, OFF);
 		}break;
 	}
 }

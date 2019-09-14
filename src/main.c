@@ -14,10 +14,11 @@ inciar(&bs);
 	while (1){
 		controladorSemaforo_UpDate(&cs);
 		controladorSemaforo_Prender(&cs);
-		delay(500);
-		controladorBlinky(&bs);
-	    prender(&bs);
 
+		controladorBlinky_Update(&bs);
+		controladorBlinky_Prender(&bs);
+
+	    delay(100);
 	}
 
 

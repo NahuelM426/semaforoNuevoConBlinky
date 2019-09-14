@@ -19,6 +19,7 @@ typedef struct blinky {
 } blinky;
 
 void inciar(blinky * bs);
-void controladorBlinky(blinky * bs);
-void prender(blinky * bs);
+void controladorBlinky_Update(blinky * bs);
+void controladorBlinky_Prender(blinky * bs);
+
 #endif /* PROGRAMS_SEMAFORONUEVO_INC_ESTADOBLINKY_H_ */
